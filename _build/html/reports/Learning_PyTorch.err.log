@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/home/scuola/.local/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/scuola/.local/lib/python3.9/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/scuola/.local/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/home/scuola/.local/lib/python3.9/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/scuola/.local/lib/python3.9/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/scuola/.local/lib/python3.9/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+y_predicted = model_quad(x, params).detach()    # we detach the values of a and b from their gradient
+                                             # con detach lo stacchi dall'albero
+
+plt.scatter(x, y)
+plt.plot(x, y_predicted, color = "red")
+
+plt.xlabel("x")
+plt.ylabel("y")
+
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-8-b5aedb3c7013>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0my_predicted[0m [0;34m=[0m [0mmodel_quad[0m[0;34m([0m[0mx[0m[0;34m,[0m [0mparams[0m[0;34m)[0m[0;34m.[0m[0mdetach[0m[0;34m([0m[0;34m)[0m    [0;31m# we detach the values of a and b from their gradient[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m                                              [0;31m# con detach lo stacchi dall'albero[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0mplt[0m[0;34m.[0m[0mscatter[0m[0;34m([0m[0mx[0m[0;34m,[0m [0my[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mplt[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0mx[0m[0;34m,[0m [0my_predicted[0m[0;34m,[0m [0mcolor[0m [0;34m=[0m [0;34m"red"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'model_quad' is not defined
+

@@ -512,7 +512,7 @@ Loss:  9.378692626953125
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">model_quad</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>    <span class="c1"># we detach the values of a and b from their gradient</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>    <span class="c1"># we detach the values of a and b from their gradient</span>
                                              <span class="c1"># con detach lo stacchi dall&#39;albero</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -526,18 +526,7 @@ Loss:  9.378692626953125
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">b5aedb3c7013</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y_predicted</span> <span class="o">=</span> <span class="n">model_quad</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>    <span class="c1"># we detach the values of a and b from their gradient</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                                              <span class="c1"># con detach lo stacchi dall&#39;albero</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;model_quad&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/add2a00feff62a24cd55837414f6dbcfbb8238f821a906a66625c17ee089d9bf.png" src="_images/add2a00feff62a24cd55837414f6dbcfbb8238f821a906a66625c17ee089d9bf.png" />
 </div>
 </div>
 </section>
@@ -608,20 +597,6 @@ Loss:  9.378692626953125
 <span class="n">y_predict</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">D_test</span><span class="p">,</span><span class="n">w_ML</span><span class="p">)</span>
 <span class="n">err_T</span> <span class="o">=</span> <span class="n">errore</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">D_train</span><span class="p">,</span><span class="n">w_ML</span><span class="p">),</span><span class="n">w_ML</span><span class="p">,</span><span class="n">lambda_reg</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">err_g</span> <span class="o">=</span> <span class="n">errore</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_predict</span><span class="p">,</span><span class="n">w_ML</span><span class="p">,</span><span class="n">lambda_reg</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mf">6e0</span><span class="n">b0f2f9ff7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">bias</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">]]</span><span class="o">*</span><span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">Design_Matrix</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">X</span><span class="p">,</span><span class="n">bias</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">D_train</span><span class="p">,</span> <span class="n">D_test</span> <span class="o">=</span> <span class="n">Design_Matrix</span><span class="p">[:</span><span class="n">number_sample_train</span><span class="p">],</span> <span class="n">Design_Matrix</span><span class="p">[</span><span class="n">number_sample_train</span><span class="p">:]</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="n">number_sample_train</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">number_sample_train</span><span class="p">:]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-
-<span class="ne">NameError</span>: name &#39;torch&#39; is not defined
 </pre></div>
 </div>
 </div>
